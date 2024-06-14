@@ -219,14 +219,15 @@ def find_plateaus(F, min_length=200, tolerance = 0.75, smoothing=25):
 tmin = 2000
 tmax = 5500
 shotmin = 180000
-shotmax = 180050
+shotmax = 200000
 shot = list(np.round(np.linspace(shotmin,shotmax,shotmax-shotmin)).astype(int))
 
 
 database = {}
 for i in shot:
+    shotnumber = i
+    database[str(i)] = {}
     try:
-        shotnumber = i
         out = fetch_data(shotnumber)
 
         ind = np.where(out['Ip']['time']>=tmin)[0]
@@ -240,7 +241,7 @@ for i in shot:
         t1.append(out['Ip']['time'][ind[plateaus[0][1]]])
 
         out['ts_data'], out['eq'] = get_TS_data(shotnumber, t0, t1)
-        database[str(i)] = {}
+        
         for j in out:
             if ((j!='shot') and (j!='eq') and (j!='ts_data')):
                 database[str(i)][j] = {}
