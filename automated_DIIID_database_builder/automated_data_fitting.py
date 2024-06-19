@@ -33,7 +33,7 @@ t1 = []
 
 # t1.append(t0[-1]+dt)
 
-path = '/fusion/projects/boundary/peretm/DIIID_analysis/GUI_fit/automated_fitting/saved_plateaus/'
+path = './saved_plateaus/'
 dir_list = os.listdir(path)
 
 
