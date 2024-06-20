@@ -1,0 +1,10 @@
+nx_core: 34
+nx_sol: 34
+ny_inner_divertor: 8
+ny_outer_divertor: 8
+ny_sol: 16
+orthogonal: true
+psinorm_pf: 0.975
+psinorm_sol: 1.07
+target_all_poloidal_spacing_length: 0.05
+xpoint_poloidal_spacing_length: 0.25
